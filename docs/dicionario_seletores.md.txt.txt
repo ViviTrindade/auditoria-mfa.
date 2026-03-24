@@ -1,0 +1,26 @@
+## Campo de Login
+
+- Tipo: input
+- Name: alias
+- ID: form-input--alias
+
+### Seletores:
+- CSS: #form-input--alias
+- CSS: input[name="alias"]
+
+Observação:
+Campo usado para inserir email, CPF ou número de cliente.
+
+---
+
+## Botão Continuar
+
+- Tipo: button
+- ID: primary-button
+
+### Seletores:
+- CSS: #primary-button
+- CSS: button[type="submit"]
+
+Observação:
+Responsável por enviar dados de login.
