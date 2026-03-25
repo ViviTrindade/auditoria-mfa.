@@ -1,11 +1,11 @@
-# 🔐 MFA Audit – LATAM Airlines
+MFA Audit – LATAM Airlines
 
-## 🎯 Objetivo
+Objetivo
 Analisar o comportamento do sistema de autenticação da LATAM Airlines, com foco em MFA (OTP e validação facial), utilizando técnicas de engenharia reversa em ambiente web.
 
 ---
 
-## 🧪 Escopo
+Escopo
 
 - Engenharia do DOM (inputs e botões)
 - Interceptação de requisições (Network / Status Codes)
@@ -14,7 +14,7 @@ Analisar o comportamento do sistema de autenticação da LATAM Airlines, com foc
 
 ---
 
-## 📂 Estrutura
+Estrutura
 
 - `docs/` → documentação técnica detalhada
 - `src/` → scripts de automação (em desenvolvimento)
@@ -22,7 +22,7 @@ Analisar o comportamento do sistema de autenticação da LATAM Airlines, com foc
 
 ---
 
-## 🔍 Principais Insights
+Principais Insights
 
 - A autenticação não depende apenas de credenciais
 - O sistema utiliza múltiplos fatores:
@@ -39,13 +39,12 @@ Analisar o comportamento do sistema de autenticação da LATAM Airlines, com foc
 
 ---
 
-## 🧠 Conclusão
+Conclusão
 
 Sistemas modernos de autenticação operam com base em análise de risco contextual, onde múltiplos sinais definem o nível de confiança do usuário.
 
 ---
-
-## 🚀 Próximos Passos
+ Próximos Passos
 
 - Automação com Playwright
 - Testes com variação de região (VPN)
@@ -53,6 +52,6 @@ Sistemas modernos de autenticação operam com base em análise de risco context
 
 ---
 
-## 🏷️ Tags
+ Tags
 
 #QA #SoftwareTesting #WebDev #CyberSecurity #TraineeToJunior
