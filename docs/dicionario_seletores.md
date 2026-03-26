@@ -57,3 +57,35 @@ O uso de `data-testid` indica suporte a frameworks de testes e estabilidade de s
 **Observação técnica:**  
 O campo de senha só é renderizado após validação do campo "alias". Isso indica renderização condicional via React + Material UI. Classes MUI não são recomendadas como seletores devido à volatilidade entre builds.
 
+
+## Botão "Fazer login"
+
+**Função:** Submete o formulário de autenticação após o campo de senha ser preenchido e validado.
+
+**Atributos identificados:**
+- `id="primary-button"`
+- `data-testid="primary-button-button"`
+- `type="submit"`
+- Estrutura: `<button>` contendo `<span>` com o texto interno "Fazer login"
+- Framework: Material UI (classes como `MuiButton-root`, `MuiButton-containedPrimary`, `MuiButton-fullWidth`)
+
+**Seletores recomendados:**
+
+**CSS (preferencial):**  
+`#primary-button`
+
+**CSS alternativo (via data-testid):**  
+`button[data-testid="primary-button-button"]`
+
+**XPath (por ID):**  
+`//*[@id="primary-button"]`
+
+**XPath (por texto):**  
+`//button[span[text()="Fazer login"]]`
+
+**XPath (via test-id):**  
+`//button[@data-testid="primary-button-button"]`
+
+**Observação técnica:**  
+Embora o botão possua várias classes Material UI, elas não devem ser usadas como seletor por serem voláteis e mudarem a cada build. Os atributos `id` e `data-testid` são os mais estáveis para automação e engenharia reversa.
+
