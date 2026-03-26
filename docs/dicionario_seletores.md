@@ -1,26 +1,28 @@
-## Campo de Login
 
-- Tipo: input
-- Name: alias
-- ID: form-input--alias
+### Campo de Login (Email, CPF ou Número de Cliente)
 
-### Seletores:
-- CSS: #form-input--alias
-- CSS: input[name="alias"]
+**Função:** campo onde o usuário insere o identificador para autenticação.
 
-Observação:
-Campo usado para inserir email, CPF ou número de cliente.
+**Atributos encontrados:**
+- `id="form-input--alias"`
+- `name="alias"`
+- `data-testid="form-input--alias-textfield-input"`
+- `placeholder="Email, CPF ou Número de cliente"`
+- Framework: Material UI (classes MUI)
 
----
+**Seletores recomendados:**
 
-## Botão Continuar
+**CSS (preferencial):**
+`#form-input--alias`
 
-- Tipo: button
-- ID: primary-button
+**CSS alternativo (via data-testid):**
+`input[data-testid="form-input--alias-textfield-input"]`
 
-### Seletores:
-- CSS: #primary-button
-- CSS: button[type="submit"]
+**XPath (por ID):**
+`//*[@id="form-input--alias"]`
 
-Observação:
-Responsável por enviar dados de login.
+**XPath (por placeholder):**
+`//input[@placeholder="Email, CPF ou Número de cliente"]`
+
+**Observação técnica:**
+O uso de `data-testid` indica suporte a frameworks de testes e estabilidade de seletor. Classes do Material UI mudam a cada build, portanto não são recomendadas como seletores.
