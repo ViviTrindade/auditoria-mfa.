@@ -1,40 +1,18 @@
-## Cookies Identificados
 
-| Nome | Tipo | Função | Observação |
-|------|------|--------|------------|
-| PIM-SESSION-ID | string | Sessão | Relacionado ao controle de login |
-| ttcsid | string | Segurança | Possível fingerprinting |
-| _abck | string | Anti-bot | Proteção contra automação |
-| bm_sz | string | Segurança | Relacionado a proteção de sessão |
+### Teste de Persistência – Resultado Final
 
----
+Após remover manualmente todos os cookies, localStorage e sessionStorage do domínio `accounts.latamairlines.com`, a página de autenticação da LATAM foi recarregada e o fluxo de login foi reiniciado.
 
-## Testes Realizados
+No entanto, ao realizar uma nova tentativa de login, o comportamento do fluxo de MFA **não se alterou**. A página exibiu novamente o estado estándar de erro de senha incorreta, sem solicitar OTP adicional, CAPTCHA reforçado ou reconhecimento facial.
 
-### Teste 1 – Remoção de ttcsid
+**Conclusão técnica:**  
+A remoção de dados locais (cookies e storage) não é suficiente para alterar o comportamento do mecanismo de MFA da LATAM. Isso indica que:
 
-Resultado:
-Sistema apresentou erro em tentativa inicial.
+- A LATAM utiliza **fingerprinting avançado** via Akamai Bot Manager.  
+- Parte da avaliação de risco ocorre **fora do navegador**, possivelmente baseada em:  
+  - reputação de IP,  
+  - análise de dispositivo via fingerprint externo,  
+  - integridade comportamental,  
+  - parâmetros criptográficos do cookie `_abck` reconstruídos pelo servidor.
 
-### Teste 2 – Nova sessão limpa
-
-Resultado:
-Login funcionou normalmente.
-
----
-
-## Análise
-
-- O comportamento do sistema varia conforme contexto.
-- Cookies não atuam isoladamente.
-- O sistema utiliza múltiplos fatores para validação.
-
----
-
-## Conclusão
-
-A autenticação depende de:
-- Cookies
-- Fingerprinting
-- Histórico de navegação
-- Comportamento do usuário
+Assim, mesmo após “resetar” o ambiente no navegador, o sistema ainda reconhece o contexto como válido e mantém o fluxo padrão de autenticação.
